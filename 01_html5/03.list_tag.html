@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list_tag</title>
+</head>
+<body>
+    li : list목록, 들여쓰기 불가. 블릿기호 기본값 disc로 표현
+    <li>목록1</li>
+    <li>목록2</li>
+
+    <h1> ul : 순서 없는 목록의 태그</h1>
+    <!-- ul > li : 들여쓰기, 블릿기호 기본값으로 표현 -->
+    <ul>
+        <li>html5</li>
+        <li>css3</li>
+        <li>javascript</li>
+        <li>jquery</li>
+    </ul>
+
+    <h3>중첩으로도 사용 가능하다</h3>
+
+    <ul>
+        <li>html5
+            <ul>
+                <li>word_tag
+                    <ul>
+                        <li>h# 태그</li>
+                        <li>em 태그</li>
+                        <li>p 태그</li>
+                    </ul>
+                </li>
+                <li>list_tag</li>
+            </ul>
+        </li>
+        <li>css3</li>
+        <li>javascript</li>
+        <li>jquery</li>
+    </ul>
+
+    <ul type="square">
+        <li>html5</li>
+        <li>css3</li>
+        <li>javascript</li>
+        <li>jquery</li>
+    </ul>
+
+    <ul type="none">
+        <li>html5</li>
+        <li>css3</li>
+        <li>javascript</li>
+        <li>jquery</li>
+    </ul>
+
+    <hr>
+
+    <h1> ol : 순서가 있는 목록 </h1>
+    기본값은 숫자로 시작한다 (1,2,3,...)
+
+    <ol>
+        <li>html5</li>
+        <li>css3</li>
+        <li>javascript</li>
+        <li>jquery</li>
+    </ol>
+
+    <h3>중첩으로도 사용 가능하다</h3>
+
+    <ol>
+        <li>html5
+            <ul>
+                <li>word_tag
+                    <ol>
+                        <li>h# 태그</li>
+                        <li>em 태그</li>
+                        <li>p 태그</li>
+                    </ol>
+                </li>
+                <li>list_tag</li>
+            </ul>
+        </li>
+        <li>css3</li>
+        <li>javascript</li>
+        <li>jquery</li>
+    </ol>
+
+    <!-- type 속성으로 숫자기호 변경 가능 -->
+    start 속성으로 시작 숫자 변경 가능
+    <ol type="I">
+        <li>html5</li>
+        <li>css3</li>
+        <li>javascript</li>
+        <li>jquery</li>
+    </ol>
+
+    <ol type="i">
+        <li>html5</li>
+        <li>css3</li>
+        <li>javascript</li>
+        <li>jquery</li>
+    </ol>
+
+    <ol type="I" start = 3>
+        <li>html5</li>
+        <li>css3</li>
+        <li>javascript</li>
+        <li>jquery</li>
+    </ol>
+
+    <ol type="A">
+        <li>html5</li>
+        <li>css3</li>
+        <li>javascript</li>
+        <li>jquery</li>
+    </ol>
+
+    <ol type="a" start = 4>
+        <li>html5</li>
+        <li>css3</li>
+        <li>javascript</li>
+        <li>jquery</li>
+    </ol>
+</body>
+</html>
