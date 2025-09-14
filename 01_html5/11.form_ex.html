@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form actioin="signup" method="post">
+        <fieldset>
+            <legend>필수 항목</legend>
+            ID : <input type="text" name="idInput" size="30"><br>
+            PW : <input type="password" name="pwInput" size="30"><br>
+            NAME : <input type="text" name="nameInput" size="30"><br>
+        </fieldset>
+        <fieldset>
+            <legend>선택 항목</legend>
+            전화번호 : <input type="tel" name="telInput" size="30"><br>
+            주소 : <input type="text" name="addressInput" size="50"><br>
+            생년월일 : <input type="date" name="dateInput"><br>
+            성별 : <input type="radio" name="gender" value="male" id="m">
+                   <label for="m">남</label>
+                   <input type="radio" name="gender" value="female" id="f">
+                   <label for="f">여</label><br>
+            할 수 있는 프로그램 : 
+            <select name="program">
+                <option value="JAVA">JAVA</option>
+                <option value="Python">Python</option>
+                <option value="C">C</option>
+                <option value="C++">C++</option>
+                <option value="C#">C#</option>
+                <option value="HTML/CSS">HTML/CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="React">React</option>
+                <option value="Android">Android</option>
+                <option value="Oracle/MySQL">Oracle/MySQL</option>
+                <option value="Other">그 외</option>
+            </select><br>
+            그 외 : 
+            <select name="others">
+                <option value="Github">Github</option>
+                <option value="AWS">AWS</option>
+                <option value="Figma">Figma</option>
+                <option value="UML">UML</option>
+            </select><br>
+            자기소개: <textarea name="introduce" cols="50" rows="15"></textarea>
+            <br><br><br>
+            <button type="submit">제출하기</button>
+        </fieldset>
+    </form>
+</body>
+</html>
