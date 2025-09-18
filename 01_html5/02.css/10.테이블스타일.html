@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="resources/css/06.style.css" rel="stylesheet">
+    <title>테이블 스타일</title>
+</head>
+<body>
+    <h1>표 스타일</h1>
+
+    <pre>
+        선택자 {
+            - border-collapse : separate | collapse
+              표 테두리와 셀 테두리를 합친다
+
+            - border-spacing : 간격
+              셀 사이의 공간을 조정한다
+              border-collapse : separate;하고 사용하여야 한다
+              (collapse는 변화가 없다)
+
+            - table-layout : auto | fixed
+              테이블 크기와 셀 너비는 컨텐츠에 따라 자동으로 결정이 된다(기본값)
+              내부의 내용하고 상관없이 테이블의 크기를 고정한다
+
+            - vertical-align : top | middle | bottom
+              세로 측의 글씨를 정렬한다
+        }
+    </pre>
+
+    <table>
+        <caption>[표 1] 웹 브라우저 종류</caption>
+        <thead>
+            <tr>
+                <th>브라우저명</th>
+                <th>제조사</th>
+                <th>홈페이지</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>엣지</td>
+                <td>마이크로소프트</td>
+                <td>https://microsoft.com</td>
+            </tr>
+            <tr>
+                <td>크롬</td>
+                <td>구글</td>
+                <td>https://google.com</td>
+            </tr>
+            <tr>
+                <td>사파리</td>
+                <td>애플</td>
+                <td>https://apple.com</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2" class="bordertop">총 브라우저 수</td>
+                <td class="bordertop">3개</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

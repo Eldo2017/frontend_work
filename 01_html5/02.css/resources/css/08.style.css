@@ -1,0 +1,51 @@
+.size-test {
+    border: 10px solid blue;
+}
+
+#test1 {
+    width: 400px; 
+    height: 200px;
+}
+
+#test2 {
+    width: 50%;
+    height: 200px;
+}
+
+.display-test {
+    border: 1px solid;
+    width : 150px;
+    height: 150px;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.inline {
+    display: inline;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}

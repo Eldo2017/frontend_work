@@ -1,4 +1,107 @@
 /*=============================== color ====================================*/
 #color {
-    color : blue;
+    /* color : blue; */
+    color : #AD9AEE;
+    /* color : rgb(173,154,238); */
+    /* color : rgba(173,154,238,0.9);
+    color : hsl(271, 66%, 70%);
+    /* h: 색상값(0~360), s: 채도(%), l: 명도(%) */
+    /* color : hsla(240,100%,50%,0.5); */
+}
+
+/*=================== 2. text-decoration =====================*/
+#td1 {
+    text-decoration : underline;
+}
+
+#td2 {
+    text-decoration: line-through;
+}
+
+#td3 {
+    text-decoration: overline;
+}
+
+#td4 {
+    text-decoration: none;
+}
+
+/*=================== 3. text-transform =====================*/
+
+#tt1 {
+    text-transform: uppercase;
+    color:red;
+}
+
+#tt2 {
+    text-transform: lowercase;
+    color: blue;
+}
+
+#tt3 {
+    text-transform: capitalize;
+    color:blueviolet;
+}
+
+/*=================== 4. text-shadow =====================*/
+.shadow {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+#ts1 {
+    color : purple;
+    text-shadow: 5px 5px;
+    text-shadow: -5px -5px 5px magenta;
+}
+
+#ts2 {
+    color: white;
+    text-shadow: 0 0 10px black;
+}
+
+#ts3 {
+    text-shadow: 0 0 4px gray, 
+                 0 -5px 4px silver,
+                 0 -10px 8px skyblue,
+                 0 -15px 15px blue,
+                 0 -22px 20px brown;
+}
+
+/*=================== 5. text-align =====================*/
+#justify {
+    text-align: justify;
+}
+
+#right {
+    text-align: right;
+}
+
+#center {
+    text-align: center;
+}
+
+/*=================== 6. line-height =====================*/
+#linepx {
+    font-size: 20px;
+    line-height: 30px; /* 글자 크기와 간격이 같다 */
+}
+
+#lineem {
+    font-size: 20px;
+    line-height: 3em;
+}
+
+#linepct {
+    font-size: 30px;
+    line-height: 300%;
+}
+
+#test {
+    width : 200px;
+    height : 200px;
+    border : 1px solid;
+    background-color: blueviolet;
+    text-align: center;
+    line-height: 200px;
 }

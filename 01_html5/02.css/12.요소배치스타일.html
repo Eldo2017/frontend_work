@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="resources/css/08.style.css" rel="stylesheet">
+    <title>요소 배치 스타일</title>
+</head>
+<body>
+    <h1>요소 배치 스타일</h1>
+
+    <h3>width, height</h3>
+
+    <p>시본적으로 내용이 차지하는 본문 영역 가로, 세로 길이를 조절한다</p>
+
+    <h4>고정 크기(px)</h4>
+    <div id="test1" class="size-test"></div>
+
+    <h4>가변 크기(%)</h4>
+    <div id="test2" class="size-test"></div>
+
+    <hr>
+
+    <h3>display: 화면 배치 방법 변경</h3>
+
+    <pre>
+        선택자 {
+            display: inline | block | inline-block;
+        }
+    </pre>
+
+    <h4>display: inline</h4>
+
+    <div class="display-test inline red">첫번째</div>
+    <div class="display-test inline blue">두번째</div>
+    <div class="display-test inline yellow">세번째</div>
+    <div class="display-test inline green">네번째</div>
+    <div class="display-test inline pink">다섯번째</div>  
+    <br><br>
+
+    <b>display: inline만 하게 되면 width 및 height 스타일 속성은 적용이 되지 않는다</b>
+
+    <h4>display: inline-block</h4>
+
+    <div class="display-test inline-block red">첫번째</div>
+    <div class="display-test inline-block blue">두번째</div>
+    <div class="display-test inline-block yellow">세번째</div>
+    <div class="display-test inline-block green">네번째</div>
+    <div class="display-test inline-block pink">다섯번째</div>
+    <br><br>
+
+    <h4>display: block</h4>
+
+    <span class="display-test block red">첫번째</span>
+    <span class="display-test block blue">두번째</span>
+    <span class="display-test block yellow">세번째</span>
+    <span class="display-test block green">네번째</span>
+    <span class="display-test block pink">다섯번째</span>
+    <br><br>
+
+</body>
+</html>

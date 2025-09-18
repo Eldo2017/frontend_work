@@ -1,0 +1,47 @@
+/* 16.pc.css */
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* 공통 레이아웃 설정 */
+header, footer {
+  background-color: #bb64fd;
+  padding: 20px;
+  text-align: center;
+}
+
+/* PC에서는 섹션과 사이드바를 가로로 나란히 배치 */
+section, aside {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+/* 전체 너비를 꽉 채우는 컨테이너 */
+body {
+  width: 100%;
+}
+
+/* 본문 (왼쪽 영역) */
+section {
+  width: 75%;
+  padding: 20px;
+  height:500px;
+  background-color: #ff55b2;
+}
+
+/* 사이드바 (오른쪽 영역) */
+aside {
+  width: 23%;
+  height: 500px;
+  padding: 20px;
+  background-color: #f3f3f3;
+}
+
+/* 푸터 스타일 */
+footer {
+  background-color: #ccc;
+  padding: 15px;
+  text-align: center;
+}

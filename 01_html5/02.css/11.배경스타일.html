@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="resources/css/07.style.css" rel="stylesheet">
+    <title>배경 스타일</title>
+</head>
+<body>
+    <h1>배경 스타일(background~)</h1>
+
+    <h3>background-color : 배경색을 지정한다</h3>
+
+    <div id="div-bg">
+        조용히 안해?! 일로와! 니가 뭔데! 어? 니가! 내 얼굴에! 침을 뱉어?! 이 새끼야!!!! 뭐 이 새끼야?! 니가 뭔데! 내 얼굴에! 침을 뱉어? 이 신영균이 얼굴에다! 일어서 이 새끼야! 일로와 이 새끼야!!!!!!! 니가 뭔데 이 신영균이를!
+    </div>
+
+    <hr>
+
+    <h3>background-clip : 배경을 적용시키려고 하는 범위를 지정한다</h3>
+
+    <pre>
+        선택자 {
+            background-clip : border-box(기본값) | padding-box | content-box 
+        }
+    </pre>
+
+    <div class="div-test" id="div1">
+        아그야, 그만 놔주라. 글다 야 숨통 막혀 죽겄다. 너 한가닥 한다잉. 그만 놔주라고 안허냐? 너 오늘 쪼까 나 좀 만나야 되겄다. 겁나게 재밌는 놈을 오늘 만나부렀구만?
+    </div>
+    <div class="div-test" id="div2">
+        아그야, 너 힘 꽤나 쓰는 모양인디. 어서 우리 아그들한테 미안하다고 혀라. 야 이 잡놈아, 딴소리 하지 말고 미안하다고 혀라고. 이 썩을 놈이 안되겠구만. 어디 나랑 한번 혀보자 이거인 모양인디.
+    </div>
+    <div class="div-test" id="div3">
+        아그야, 근디 니 이름이 뭐다냐? 오냐, 괜찮다. 이 형님한테 말해도 괜찮은게. 나는 김무옥이라는 사람이여. 종로가 그집임 내것이여 알갓냐? 니 이름이 뭐다냐? 김 뭐시기?
+    </div>
+
+    <hr>
+
+    <h3>배경 사진 스타일</h3>
+
+    <pre>
+        선택자 {
+            background-image: url("이미지 경로");
+            background-repeat: repeat | repeat-x | repeat-y | no-repeat;
+            background-size: auto | contain | cover | px px | % %;
+            background-position : 좌/우/가운데 위/가운데 아래/가운데|px px|% %;
+            background-attachent: scroll | fixed;
+        }
+    </pre>
+
+    <div id="bg-img"></div>
+</body>
+</html>

@@ -3,18 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="resources/css/03.style.css" rel="stylesheet">
     <title>텍스트 스타일</title>
 </head>
 <body>
     <h1>텍스트 스타일(text~)</h1>
 
     <h3>1. color : 텍스트 색상을 만든다</h3>
-    <pre>
+    <pre id="color">
         선택자 {
             color : 색상명 | 16진수 | rgb(x,x,x) | rgba(x,x,x,x) | hsl(x,x,x) | hsla(x,x,x,x)
         }
     </pre>
 
+    <hr>
+
+    <h3>2. text-decoration : 텍스트에 줄 긋기나 줄을 제거할 때 사용</h3>
+    <pre>
+        선택자 {
+            text-decoration : none | underline | overline | line-throw
+        }
+    </pre>
+
+    <ul>
+        <li id="td1">텍스트 영역 밑에 줄긋기</li>
+        <li id="td2">텍스트 영역 중간에 줄긋기</li>
+        <li id="td3">텍스트 영역 위에 줄긋기</li>
+    </ul>
+
+    <a href = "https://chzzk.naver.com" target="_blank" id="td4">치지직으로!</a>
+
+    <hr>
+
+    <h3>3. text-transform : 영문 텍스트의 대소문자 변환에 사용</h3>
+
+    <pre>
+        선택자 {
+            text-transform : uppercase | lowercase | capitalize;
+        }
+    </pre>
+
+    <ol>
+        <li id="tt1">uppercase : 모든 영문자를 대문자로 바꾼다</li>
+        <li id="tt2">lowercase : 모든 영문자를 소문자로 바꾼다</li>
+        <li id="tt3">capitalize : 모든 영문자 중 맨 처음에 있는 글자를 대문자로 바꾼다</li>
+    </ol>
+
+    <hr>
+    <h3>4. text-shadow : 텍스트에 그림자 효과를 준다</h3>
+    <pre>
+        선택자 {
+            text-shadow : x(가로) | y(세로) | 번짐정도 | 색상
+        }
+    </pre>
+
+    <div>
+        <span class="shadow" id="ts1">Html</span>
+        <br><br>
+        
+        <span class="shadow" id="ts2">Html</span>
+        <br><br>
+
+        <span class="shadow" id="ts3">Html</span>
+        <br><br>
     
-</body>
+    </div>
+
+    <hr>
+
+    <h3>5. text-align : 텍스트를 정렬한다</h3>
+
+    <pre>
+        선택자 {
+            text-align : left(기본값) | justify | right | center
+        }
+    </pre>
+
+    <h4>좌측 정렬</h4>
+    <p>나 김두한이는 왜놈들과 한통속인 사람들에겐 단 한푼도 바칠 수 없다고 말이오</p>
+    <h4>양쪽 정렬</h4>
+    <p id="justify">국민들은 나를 보고! 정부에 대해 이렇게 말을 하라고 했어. 똥이나 쳐먹어 이 새끼들아!!!!!!</p>
+    <h4>오른쪽 정렬</h4>
+    <p id="right">꺼져 이 새끼들아! 야 이 쪽바리 새끼들아, 니들 종로 바닥에 다시 나타나면은 아주 뼈도 못추릴 줄 알어 이 자식들아!</p>
+    <h4>중앙 정렬</h4>
+    <p id="center">그래, 김두한이. 너 나한테 도전을 다 하다니... 너 아주 많이 컸구나...</p>
+
+    <hr>
+
+    <h3>6. line-height : 줄 간격을 조정한다</h3>
+    <pre>
+        선택자 {
+            line-height : normal | px | em | %
+        }
+    </pre>
+
+    <h4>px 고정 단위 간격</h4>
+    <p id="linepx">아니 그보다도 조금 전에 뭐라 그랬나? 날 보고 성불구자가 된다고? 고자가 된다 그런 말인가? 고자라니! 아니, 내가 고자라니!</p>
+    <h4>em 가변 단위 간격</h4>
+    <p id="lineem">고자라니! 아니, 내가 고자라니! 이게 무슨 소리야? 아잇! 고자라니!!!! 내가! 내가 고자라니!!!!!! 으악으악으악... 안돼... 안돼...</p>
+    <h4>% 배율 단위 간격</h4>
+    <p id="linepct">내가 고자라니... 말도 안돼... 김두한 네 이놈. 이건 말도 안돼... 말도 안된다고, 어허허허허허허허허허허허허허허헣!!! 말도 안돼...</p>
+    
+    <p id="test">야인시대</p>
+    </body>
 </html>

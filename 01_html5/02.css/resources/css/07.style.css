@@ -1,0 +1,56 @@
+body {
+    background-color: rgb(197, 110, 255);
+    background-color: rgba(197, 110, 255, 0.7);
+}
+
+#div-bg {
+    background-color: beige;
+    padding : 20px;
+    border: 10px solid magenta;
+    width: 50%;
+}
+
+.div-test {
+    margin: 30px;
+    background-color: gold;
+    border: 10px dashed;
+    padding: 20px;
+}
+
+#div1 {background-clip: border-box;} /* 기본값 */
+#div2 {background-clip: padding-box;}
+#div3 {background-clip: content-box;}
+
+#bg-img {
+    border: 1px solid;
+    width: 70%;
+    height: 500px;
+
+    background-image: url("../img/로제.jpeg");
+    background-repeat: no-repeat;
+    /* background-repeat: repeat-x;
+    background-repeat: repeat-y; */
+
+    background-size: auto; /* 기본값 원래 이미지 크기 */
+    background-size: contain; /* 해당 요소 안에 사진이 모두 보이게 한다(정작, 빈 공간은 생길 수 있다 */
+    background-size: cover; /* 해당 요소 안에 사진이 꽉 치게 채운다(정작 사진이 잘릴 수가 있다) */
+    background-size: 500px; /* 가로 기준 길이 (세로는 원래 이미지 비율에 맞춰 보여준다) */
+    background-size: 500px 350px; /* 가로 세로 길이 */
+    background-size: 70%;
+    background-size: 70% 70%;
+    background-size: auto;
+
+    background-position: left top; /* 기본값 */
+    background-position: center bottom;
+    background-position: center center;
+    background-position: 20% 30%;
+    background-position: 50% 50%;
+
+    background-attachment: scroll; /* 기본값 */
+    background-attachment: fixed;
+    /*
+        background 속성값을 '색상 이미지 반복 여부 위치 / 사이즈' 순서대로 작성할 수 있다
+    */
+
+    background: rgb(197, 121, 255) url(https://media.tenor.com/Da4beB_uezoAAAAe/kamen-rider-regad-kamen-rider-regad-omega.png) no-repeat center center / 300px auto;
+}

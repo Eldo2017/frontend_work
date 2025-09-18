@@ -1,0 +1,33 @@
+table {
+    border: 1px solid;
+
+    /* border-collapse: separate;
+    border-spacing: 10px 20px; */
+    
+    border-collapse: collapse;
+    width: 450px;
+    table-layout: fixed; /* auto(기본값), fixed: 테이블의 width값을 고정(글씨가 많아도 늘어나진 않는다) */
+}
+
+thead, tfoot {
+    background-color: darkorchid;
+}
+
+tbody {
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid;
+    width: 150px;
+    height: 35px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: bottom;
+
+    word-break: break-all; /* 영문 글자에 공백이 없어도 중간에 끊어서 내린다 */
+}
+
+.bordertop {
+    border-top: 1px double magenta;
+}
