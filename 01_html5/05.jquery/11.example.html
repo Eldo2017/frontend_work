@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Board</title>
+    <style>
+        thead {
+            background-color: crimson;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <h1>게 시 판</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>글 번호</th>
+                <th>제목</th>
+                <th>글쓴이</th>
+                <th>작성일</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>글 1</td>
+                <td>user01</td>
+                <td>20240722</td>
+                <td>29</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>글 2</td>
+                <td>user02</td>
+                <td>20240825</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>글 3</td>
+                <td>user03</td>
+                <td>20240228</td>
+                <td>8</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br><br>
+
+    선택된 게시글 정보 : 
+    <span id="s0">글 번호</span> / 
+    <span id="s1">제목</span> / 
+    <span id="s2">작성자</span> / 
+    <span id="s3">작성일</span> / 
+    <span id="s4">조회수</span> / 
+
+    <script>
+        $(() => {
+            $('tbody tr').on("click", function () {
+                const tds = $(this).find("td"); // td 요소 선택
+                $('#s0').text(tds.eq(0).text()); // 글 번호
+                $('#s1').text(tds.eq(1).text()); // 글 제목
+                $('#s2').text(tds.eq(2).text()); // 작성자
+                $('#s3').text(tds.eq(3).text()); // 작성일
+                $('#s4').text(tds.eq(4).text()); // 조회수
+            });
+        });
+    </script>
+</body>
+</html>

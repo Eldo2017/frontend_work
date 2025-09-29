@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression</title>
+    <style>
+        .area {
+            border:1px solid;
+            padding: 5px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>정규 표현식</h1>
+
+    <h3>* 정규 표현식 객체 및 정규 표현식과 관련된 메소드</h3>
+
+    <div class="area" id="area1"></div>
+
+    <button onclick="test1();">실행확인</button>
+
+    <script>
+        function test1() {
+            const area1 = document.getElementById('area1');
+
+            const str1 = 'Galaxy Eyes Tachyon Dragon';
+            const str2 = 'Neo Galaxy Eyes Tachyon Dragon';
+
+            // 정규 표현식 == 정규식 변수를 선언
+            // -> 검색 조건으로 삼으려고 하는 문자열이나 특정 패턴을 만들어라
+
+            let regExp = new RegExp('Tachyon'); // 방법 1. 
+            let regExp2 = /script/; // 방법 2. 
+
+            /*
+                * RegExp 객체에서 제공하는 메소드(정규식.xxx(문자열))
+                  - 정규식.test(문자열) : 문자열에서 정규식 값과 일치하는 값이 있다면 true, 아니면 false 
+                  - 정규식.exec(문자열) : 문자열에서 정규식 값과 일치하는 값이 있다면 처음 매칭된 문자열, 아니면 null
+                  
+                * String 객체에서 제공하는 메소드(문자열.xxx(정규식))
+                  - 문자열.match(정규식) : 정규식 값과 일치하는 값을 문자열에서 찾아 반환
+                  - 문자열.search(정규식) : 정규식 값과 일치하는 값을 문자열에서 찾아 그의 시작인덱스로 반환
+                  - 문자열.replace(정규식, 바꿀 값) : 정규식 값과 일치하는 첫번째 값을 바꿀 값으로 바꾼다
+                  - 문자열.split(정규식) : 정규식에 지정이 된 값을 구분자로 하여금 나눠진 값들이 담겨있는 배열을 반환
+            */
+
+            area1.innerHTML+=`str1 : ${str1}<br>`;
+            area1.innerHTML+=`str2 : ${str2}<br>`;
+            area1.innerHTML+=`regExp : ${regExp}<br><hr>`;
+
+            area1.innerHTML+=`regExp.test(str1) : ${regExp.test(str1)}<br>`;
+            area1.innerHTML+=`regExp.test(str2) : ${regExp.test(str2)}<br>`;
+            area1.innerHTML+=`regExp.exec(str1) : ${regExp.exec(str1)}<br>`;
+            area1.innerHTML+=`regExp.exec(str2) : ${regExp.exec(str2)}<br><hr>`;
+
+            area1.innerHTML+=`str1.match(regExp) : ${str1.match(regExp)}<br>`;
+            area1.innerHTML+=`str2.match(regExp) : ${str2.match(regExp)}<br>`;
+
+            area1.innerHTML+=`str1.search(regExp) : ${str1.search(regExp)}<br>`;
+            area1.innerHTML+=`str2.search(regExp) : ${str2.search(regExp)}<br>`;
+
+            area1.innerHTML+=`str1.replace(regExp,'타키온') : ${str1.replace(regExp,'타키온')}<br>`;
+            area1.innerHTML+=`str1.split(regExp) : ${str1.split(regExp)}<br>`;
+
+            regExp = / /;
+            area.innerHTML+=`str1.split(regExp) : ${str1.split(regExp)}<br>`;
+        }
+    </script>
+
+    <h3>* 메타 문자</h3>
+
+    <p>
+        메타 문자를 이용하여 정규식으로 검색 조건에 맞는 "특정 패턴"을 만든다
+        문자열이 해당 정규식으로 만든 특정 패턴에 만족하는지 test()로 검사한다
+    </p>
+
+    <div class="area" id="area2"></div>
+    <button onclick="test2();">실행확인</button>
+
+    <script>
+        function test2() {
+            const area2 = document.getElementById('area2');
+
+            const str = 'Decode Talker';
+        
+            let regExp = /a/;
+            area2.innerHTML+=`str : ${str}<br>`;
+            area2.innerHTML+=` /a/ :  ${regExp.test(str)}<br>`;
+            
+            // 일치하는 값 중 첫번째 값만 변환한다
+            area2.innerHTML+=` /a/를 (***)로 변환하라 :  ${str.replace(regExp,'(***)')}<br>`;
+        
+            // 1. ^ : 시작의 의미
+            regExp = /^D/;
+
+            // area2.innerHTML+=` /^e/ : ${regExp.test(str)}<br>`;
+            area2.innerHTML+=` /^D/ : ${regExp.test(str)}<br>`;
+            area2.innerHTML+=` /^D/를 (***)로 변환하라 : ${str.replace(regExp,'(***)')}<br>`;
+
+            regExp = /^e/;
+
+            // area2.innerHTML+=` /^e/ : ${regExp.test(str)}<br>`;
+            area2.innerHTML+=` /^e/ : ${regExp.test(str)}<br>`;
+            area2.innerHTML+=` /^e/를 (***)로 변환하라 : ${str.replace(regExp,'(***)')}<br>`;
+        
+            // 2. [] : [] 내에 여러 문자들을 목록처럼 나열 가능
+            regExp = /[abc]/; // a나 b나 c 중에 처음 나오는 문자 변환
+            area2.innerHTML+=`/[abc]/ : ${regExp.test(str)}<br>`;
+            area2.innerHTML+=`/[abc]/를 (***)로 변환하라 : ${str.replace(regExp,'(***)')}<br><hr>`
+
+            regExp=/^[DAk]/; // 시작값이 D 또는 A 또는 k이면 true
+            let str1 = 'Access Code Talker';
+            area2.innerHTML+=`/^[DAk]/ : ${regExp.test(str)}<br>`;
+
+            area2.innerHTML+=`/^[DAk]/ : ${str1.replace(regExp,'(***)')}<br>`;
+
+            // 3. $ : 끝을 의미
+            regExp = /r$/;
+            area2.innerHTML+=`/r$/ : ${regExp.test(str1)}<br>`;
+            area2.innerHTML+=`/r$/를 (***)로 변환하라 : ${str1.replace(regExp,'(***)')}<br><hr>`
+            
+            // 시작은 D, 끝은 r인지
+            regExp = /^Dr$/; // Dr만 true
+            area2.innerHTML+=`/^Dr$/ : ${regExp.test(str)}<br>`;
+
+            // 4. 점(.) : 개행문자를 제외한 모든 문자(영문자, 숫자, 한글, 특수문자)
+            // 5. + : 한 글자 이상
+            // .+ : 개행문자를 제외한 모든 문자가 한글자 이상 들어오면 된다
+
+            regExp = /^D.+r$/;
+            area2.innerHTML+=`/^D.+r$/ : ${regExp.test(str)}<br>`;
+
+            // 시작부터 끝까지 숫자로만
+            regExp=/^[0-9]+$/; // 숫자로 시작하고 한 글자 이상 들어오면 된다. 그리고 끝도 숫자로 끝내라
+            area2.innerHTML+=`/^[0-9]+$/ : ${regExp.test('372495241663')}<br>`;
+            area2.innerHTML+=`/^[0-9]+$/ : ${regExp.test('3jin*9526')}<br>`;
+
+            // 만약 숫자가 아닌 영문자(대소문자 안가리고)라면?
+            regExp=/^[a-zA-Z]+$/;
+            area2.innerHTML+=`/^[a-zA-Z]+$/ : ${regExp.test('CloseSummon')}<br>`;
+            area2.innerHTML+=`/^[a-zA-Z]+$/ : ${regExp.test('Close19526Summon슈팅스타!')}<br>`;
+
+            // 만약 숫자가 아닌 한글이라면?
+            regExp=/^[ㄱ-ㅎㅏ-ㅣ가-힣]+$/;
+            area2.innerHTML+=`/^[ㄱ-ㅎㅏ-ㅣ가-힣]+$/ : ${regExp.test('가ㅛㅠㅓㅏㅑ매저힣')}<br>`;
+            area2.innerHTML+=`/^[ㄱ-ㅎㅏ-ㅣ가-힣]+$/ : ${regExp.test('가ㅛㅠuglliin@ㅓㅏㅑ매저힣6924')}<br>`;
+
+            regExp=/^[가-힣]+$/;
+            area2.innerHTML+=`/^[가-힣]+$/ : ${regExp.test('가ㅛㅠㅓㅏㅑ매저힣')}<br>`;
+
+            // 이름을 입력받아 확인하기
+            regExp=/^[가-힣]{2,4}$/; // {2,}
+            const name = prompt('이름을 입력하라');
+
+            if(regExp.test(name)) {
+                alert('반갑습니다');
+            }
+            else {
+                alert('이름을 다시 입력하세요');
+            }
+        }
+    </script>
+
+    <h3>* 플래그 문자</h3>
+
+    <p>
+        i : 대소문자 안가리고 비교를 수행한다<br>
+        g : 전역으로 수행한다<br>
+        m : 여러줄 비교를 수행<br>
+    </p>
+
+    <button onclick="test3();">/i 실행확인</button>
+
+    <script>
+        function test3() {
+            // 영문자(대소문자)로 시작하거나 숫자로만 이루어져야 한다면
+            let regExp = /^[a-zA-Z][0-9a-zA-Z]+$/;
+            regExp = /^[a-z][0-9a-z]+$/;
+
+            const val = prompt('닉네임은?');
+            if(regExp.test(val)) {
+                alert('닉네임으로 사용할 수 있습니다.');
+            } else {
+                alert('닉네임으로 사용할 수 없습니다.');
+            }
+        }
+    </script>
+
+    <button onclick="test4();">/g 실행확인</button>
+
+    <div class="area" id="area3"></div>
+
+    <script>
+        function test4() {
+            const area3 = document.getElementById('area3');
+
+            const str = 'Galaxy Eyes Cipher Dragon';
+
+            let regExp = /a/;
+            area3.innerHTML+=`/a/ : ${str.replace(regExp,'(***)')}<br>`;
+
+            regExp = /a/ig;
+            area3.innerHTML+=`/a/ig : ${str.replace(regExp,'(***)')}<br>`;
+
+            const str2 = 'Galaxy\nEyes\nCipher\nDragon';
+            console.log(str2);
+
+            regExp=/^G/;
+            area3.innerHTML+=`/^G/ : ${str2.replace(regExp,'(***)')}<br>`;
+
+            regExp=/^G/ig;
+            area3.innerHTML+=`/^G/ig : ${str2.replace(regExp,'(***)')}<br>`;
+        }
+    </script>
+
+    <div class="area" id="area3"></div>
+    <button onclick="test5();">/m 실행확인</button>
+
+    <script>
+        function test5() {
+            const area4 = document.getElementById('area3');
+            const str = 'Galaxy\nEyes\nCipher\nDragon';
+            console.log(str);
+
+            regExp=/^G/;
+            area4.innerHTML+=`/^G/ : ${str.replace(regExp,'(***)')}<br>`;
+
+            regExp=/^G/ig;
+            area4.innerHTML+=`/^G/ig : ${str.replace(regExp,'(***)')}<br>`;
+
+            regExp=/^g/igm;
+            area4.innerHTML+=`/^g/igm : ${str.replace(regExp,'(***)')}<br>`;
+        }
+    </script>
+
+    <h3>* 정규표현식으로 주민번호 입력하기</h3>
+
+    주민번호 : <input id="pno" placeholder="123456-1234567"><br>
+
+    <button onclick="test6();">확인</button>
+
+    <script>
+        function test6() {
+            const value = document.getElementById('pno').value;
+
+            // 1. 글자 수만 비교
+            // const regExp = /^......-.......$/;
+            // if(regExp.test(value)) {
+            //     alert('정상 입력되었습니다.');
+            // } else {
+            //     alert('다시 입력하세요.');
+            // }
+
+            // 2. 숫자 6개 - [1-4] 그 외의 숫자 6개
+            /*
+                . : 개행문자 제외한 모든 문자 1글자
+                \d : 숫자만
+                \D : 숫자를 제외한 모든 문자
+                \w : 영문자, 숫자, _(언더바)
+                \W : 위 셋을 제외한 모든 문자
+
+                \s : 공백문자(띄어쓰기, 탭, 줄바꿈)
+                \S : 위 셋을 제외한 모든 문자
+
+                <수량 문자>
+                + : 한 글자 이상
+                * : 0글자 이상
+                ? : 0글자 또는 1글자
+
+                {4} : 4글자
+                {3,7} : 3~7글자
+                {3,} : 3글자 이상
+                {,5} : 0~5글자
+            */
+
+            // /^\d\d\d\d\d\d-[1-4]\d\d\d\d\d\d/;
+            // (0[1-9]|1[0-9]|2[0-9]|3[0-1])
+
+            const regExp = /^\d{2}(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])-[1-4]\d{6}$/;
+            if(regExp.test(value)){
+                alert('정상 입력되었습니다.');
+            } else {
+                alert('잘못 입력했습니다.');
+            }
+
+        }
+    </script>
+</body>
+</html>

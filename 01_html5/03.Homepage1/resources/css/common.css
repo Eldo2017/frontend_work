@@ -1,0 +1,27 @@
+a {
+  text-decoration: none;
+  color:white;
+  margin: 0 auto;
+}
+
+.navi {
+  background-color: navy;
+}
+
+.navi a:link, a.navi a:visited {
+  color: skyblue;
+}
+
+.navi a:hover, a:focus {
+  color: gold;
+}
+
+.navi a:active {
+  color: green;
+}
+
+footer {
+  background-color: navy;
+  color:white;
+  font-size: 0.8em;
+}

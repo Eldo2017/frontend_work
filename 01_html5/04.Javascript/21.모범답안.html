@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up 2</title>
+    <link href="resources/css/모범답안.css" rel="stylesheet">
+    <script src="resources/js/02.모범답안.js"></script>
+</head>
+<body>
+    <h1>회원가입</h1>
+
+    <form action="login.me">
+        <table>
+            <tr>
+                <td>* 아이디</td>
+                <td><input name="id" id="id" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="note">
+                    첫 글자는 반드시 영문자, 영문자/숫자 포함 총 4~12자로 입력하세요.
+                </td>
+            </tr>
+
+            <tr>
+                <td>* 비밀번호</td>
+                <td><input type="password" name="pw" id="pw" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="note">
+                    영문자, 숫자, 특수문자로 총 8~15자로 입력하세요.
+                </td>
+            </tr>
+
+            <tr>
+                <td>* 비밀번호 확인</td>
+                <td><input type="password" name="pwcheck" id="pwcheck" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="note">
+                    위의 비밀번호와 일치하도록 입력하세요.
+                </td>
+            </tr>
+
+            <tr>
+                <td>* 이름</td>
+                <td><input name="name" id="name" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="note">
+                    한글로만 이루어져 있어야 하며 2글자 이상 입력하세요.
+                </td>
+            </tr>
+
+            <tr>
+                <td>* 이메일</td>
+                <td><input type="email" name="email" id="email" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="note">
+                    이메일 형식과 맞게 입력하세요.
+                </td>
+            </tr>
+
+            <tr>
+                <td>* 취미</td>
+                <td><input name="hobby" id="hobby" required></td>
+            </tr>
+
+            <tr>
+                <td>* 거주지</td>
+                <td>
+                    <select name="address" id="address">
+                        <option value="seoul">서울</option>
+                        <option value="gyeonggi">경기도</option>
+                        <option value="incheon">인천</option>
+                        <option value="gangwon">강원도</option>
+                        <option value="jeolla">전라도</option>
+                        <option value="chungcheong">충청도</option>
+                        <option value="gyeongsang">경상도</option>
+                        <option value="daegu">대구</option>
+                        <option value="busan">부산</option>
+                        <option value="ulsan">울산</option>
+                        <option value="sejoing">세종</option>
+                        <option value="jeju">제주</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><hr></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: right;">
+                    <input type="submit" class="btn" value="회원가입" onclick="return validate();">
+                    <input type="reset" class="btn" value="취소">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element 6</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .wrap, .wrap * {
+            border: 1px solid darkslategray;
+            color: lightslategray;
+            display: block;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h3>* 동위(Sideways) 메소드 : 같은 레벨에 있는 요소들을 선택한다</h3>
+
+    <div class="wrap">
+        <p>p</p>
+        <span>span</span>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <h4>h4</h4>
+        <p>p</p>
+    </div>
+
+    <h4>- $('선택자').siblings()</h4>
+    선택된 요소와 같은 레벨 소속 모든 요소들 선택
+
+    <h4>- $('선택자').siblings('선택자')</h4>
+    선택된 요소와 같은 레벨 소속 모든 요소들 중에서 제시한 값과 일치하는 요소 선택
+
+    <h4>- $('선택자').next() | prev()</h4>
+    선택된 요소와 같은 레벨 소속 모든 요소들 중에서 바로 다음 요소나 그 전의 요소 선택
+
+    <h4>- $('선택자').nextAll() | prevAll()</h4>
+    선택된 요소와 같은 레벨 소속 요소의 다음 요소들 또는 그 전의 요소들 선택
+
+    <h4>- $('선택자').nextUntil('선택자') | prevUntil('선택자')</h4>
+    선택된 요소와 같은 레벨 소속 바로 다음( 혹은 이전) 요소들 중에서 제시한 값과 일치하는 요소까지 선택
+
+    <script>
+        $(() => {
+            // 앞으로 부여할 스타일 선택
+            const style1 = {color:'pink',border:'2px solid lightblue'};
+            const style2 = {color:'cyan',border:'2px solid black'};
+            const style3 = {color:'lightgray',border:'2px solid gold'};
+            const style4 = {color:'purple',border:'2px solid deeppink'};
+            const style5 = {color:'black',border:'2px solid red'};
+
+            $('h2').siblings().css(style1);
+            $('h2').siblings('p').css(style2);
+
+            $('h2').next().css(style3);
+            $('h2').nextAll().css(style4);
+            $('h2').nextUntil('p').css(style5);
+
+            $('h2').prev().css('font-weight','bold');
+            $('h2').prevAll().css('border','dotted');
+            $('h2').prevUntil('p').css(style5);
+        })
+    </script>
+</body>
+</html>

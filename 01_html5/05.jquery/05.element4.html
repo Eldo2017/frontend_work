@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element 4</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .wrap, .wrap * {
+            border: 1px solid darkslategray;
+            color: lightslategray;
+            display: block;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>탐색(순회) 메소드(Traversing)</h1>
+
+    <h3>* 조상(Ancestors) 메소드 : 기준이 되는 요소의 상위요소들을 선택할 수 있는 메소드</h3>
+    <div class="wrap">
+        <div>div(증조할아버지)
+            <ul>ul(할아버지)
+                <li>li(아버지)
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
+
+        <div>div(할머니)
+            <p>p(어머니)
+                <span>span</span>
+            </p>
+        </div>
+    </div>
+
+    <h4>- $('선택자').parent()</h4>
+    선택이 된 요소의 바로 위쪽(상위) 부모의 요소 하나만 선택한다
+
+    <h4>- $('선택자').parents()</h4>
+    선택이 된 요소의 모든 상위 요소들을 선택한다
+
+    <h4>- $('선택자').parents('선택자')</h4>
+    선택이 된 요소의 모든 상위 요소들 중에서 보여준 값과 일치하는 상위 요소들을 선택한다
+
+    <h4>- $('선택자').parentsUntil('선택자')</h4>
+    선택이 된 요소부터 보여준 값 전까지의 모든 상위 요소들을 선택한다
+
+    <script>
+        $(() => {
+            // parent()
+            $('span').parent().css({color:'darkblue',border:'2px solid gold'});
+            // parents()
+            $('span').parents().css({color:'darkred'});
+            // parents('선택자')
+            $('span').parents('div').css({border:'2px dashed darkgreen'});
+            // parentsUntil('선택자')
+            $('span').parentsUntil('div').css({color:'darkorchid'});
+        })
+    </script>
+</body>
+</html>

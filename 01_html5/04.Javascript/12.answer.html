@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제</title>
+    <style>
+        .area {
+            border : 1px solid;
+            width : 600px;
+            padding : 5px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        객체 생성
+        student 객체 생성 속성 3개이상 (그중 1개는 속성명에 빈칸, 1개는 특수기호)
+        속성명, 속성값 자유
+
+        다음을 화살표 함수로 바꾸시오
+        1. let tjoeun1 = function(name) {
+	        return name;
+        }
+
+        2. let tjoeun2 = function(name, age) {
+            만약 age가 50이하이면 age+2000을 하여 year변수에 저장
+            그렇지 않으면 age+1900을 하여 year변수에 저장 
+            return name님의 생년은 ????년 입니다;
+        }
+
+        map() 함수를 이용하여 배열 [2,4,6,8]로 => 새로운 배열[10,20,30,40]의 
+        배열 생성하여 출력
+    -->
+
+    <div class="area" id="test"></div>
+    <button onclick="test();">정답확인</button>
+
+    <script>
+        // 객체 생성
+        const student = {
+            name:'김두한',
+            age : 23,
+            'your hobby':'싸움',
+            'e-mail!' : 'doohan@gmail.com'
+        }
+
+        let tjoeun1 = name => name;
+
+        let tjoeun2 = (name,age) => {
+            let year;
+            if(age <= 50){
+                year = age + 2000;
+            }
+            else {
+                year = age + 1900;
+            }
+            return `${name}님의 생년은 ${year}년입니다.`;
+        }
+
+        const arr = [2,4,6,8];
+        const ten_arr = arr.map(num => num*5);
+        console.log(ten_arr);
+
+        function test() {
+            const test = document.getElementById('test');
+            test.innerHTML+=`당신의 이름 : ${tjoeun1('정진영')}<br>`;
+            test.innerHTML+=`당신의 생년 : ${tjoeun2('정진영',21)}<br>`;
+            test.innerHTML+=`배열 변환 결과 : ${ten_arr}<br>`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object 3</title>
+    <style>
+        .area {
+            border: 1px solid;
+            padding: 5px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h3>* 객체의 다량 데이터 관리</h3>
+
+    <div class="area" id="area1"></div>
+    <button onclick="test1();">실행확인</button>
+
+    <script>
+        function test1() {
+            const student1 = {name:'김영태', c:83, python:72, java:69};
+            const student2 = {name:'김두한', c:79, python:100, java:82};
+            const student3 = {name:'김무옥', c:91, python:80, java:78};
+            const student4 = {name:'문영철', c:85, python:91, java:93};
+
+            // const students1 = [student1,student2,...];
+            const students = [];
+            students.push(student1);
+            students.push(student2);
+            students.push(student3);
+            students.push(student4);
+
+            console.log(students);
+            console.log(students[1]);
+            console.log(students[1].name);
+
+            for(i in students){
+                students[i]["c++"]=100;
+                // 합계 속성 추가
+                let sum = students[i].c + students[i].python + students[i].java + students[i]["c++"];
+                students[i].sum = sum;
+                // 평균 속성 추가
+                students[i].avg = (sum / 4).toFixed(1);
+            }
+            console.log(students);
+
+            // 출력 (화면에도 보여주기)
+            const area1 = document.getElementById('area1');
+            area1.innerHTML = ""; // 초기화
+            students.forEach(stu => {
+                area1.innerHTML += `${stu.name} - 합계: ${stu.sum}, 평균: ${stu.avg}<br>`;
+            });
+        }
+    </script>
+
+    <hr>
+
+    <h3>* date 내장 객체</h3>
+
+    <div class="area" id="area2"></div>
+    <button onclick="test2();">실행확인</button>
+
+    <script>
+        function test2() {
+            const area2 = document.getElementById('area2');
+            const date1 = new Date();
+            area2.innerHTML+=`Date() : ${date1}<br>`;
+            const date2 = new Date(2025,8-1,4); // 2025년 8월 4일
+            area2.innerHTML+=`Date() : ${date2}<br>`;
+            const date3 = new Date(2025,8-1,4,15,0,0); // 시간까지
+            area2.innerHTML+=`Date() : ${date3}<br>`;
+            const date4 = new Date(2025,8-1,4,15,0,0,1000); // 밀리세컨드 초까지
+            area2.innerHTML+=`Date() : ${date4}<br>`;
+
+            area2.innerHTML+=`년도 : ${date1.getFullYear()}<br>`;
+            area2.innerHTML+=`현재 달 : ${date1.getMonth()}<br>`;
+            area2.innerHTML+=`현재 일자 : ${date1.getDate()}<br>`;
+            area2.innerHTML+=`현재 요일 : ${date1.getDay()}<br>`;
+
+            // 오늘 날짜로부터 종강일까지의 남은 기간
+            const endDate = new Date(2026,3-1,20);
+            const now = new Date();
+
+            // 밀리세컨드로 남았는지 알려준다
+            area2.innerHTML+=`종강일까지 남은 기간 : ${Math.ceil((endDate-now)/(24*60*60*1000))}`;
+
+            /*
+                1s == 1000ms
+                1m == 60s == 60*1000ms
+                1h == 60m == 60*60s == 60*60*1000ms
+                1d == 24h == 24*60m == 24*60*60s == 24*60*60*1000ms
+            */
+        }
+    </script>
+</body>
+</html>

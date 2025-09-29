@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .container {
+            border: 2px solid;
+            padding: 30px;
+            width: 500px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: inline-block;
+            width: 130px;
+            font-weight: bold;
+            vertical-align: top;
+        }
+
+        .form-group input, .form-group select {
+            width: 300px;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        .form-group .note {
+            margin-left: 130px;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            width : 100px;
+            padding: 8px;
+            font-size: 14px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>회원가입</h2>
+        <form onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="id">* 아이디 :</label>
+                <input type="text" id="id" required>
+                <div class="note">첫 글자는 반드시 영문자, 영문자/숫자 포함 총 4~12자로 입력하세요.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">* 비밀번호 :</label>
+                <input type="password" id="password" required>
+                <div class="note">영문자, 숫자, 특수문자로 총 8~15자로 입력하세요.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="passwordConfirm">* 비밀번호 확인 :</label>
+                <input type="password" id="passwordConfirm" required>
+                <div class="note">위의 비밀번호와 일치하도록 입력하세요.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="name">* 이름 :</label>
+                <input type="text" id="name" required>
+                <div class="note">한글로만 이루어져 있어야 하며 2글자 이상 입력하세요.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">* 이메일 :</label>
+                <input type="email" id="email" required>
+                <div class="note">이메일 형식과 맞게 입력하세요.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="hobby">* 취미 :</label>
+                <input type="text" id="hobby" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">* 거주지</label>
+                <select id="location">
+                    <option>서울</option>
+                    <option>경기</option>
+                    <option>인천</option>
+                    <option>광주</option>
+                    <option>울산</option>
+                    <option>세종</option>
+                    <option>강원</option>
+                    <option>대전</option>
+                    <option>전북</option>
+                    <option>전남</option>
+                    <option>경북</option>
+                    <option>경남</option>
+                    <option>대구</option>
+                    <option>부산</option>
+                    <option>충북</option>
+                    <option>충남</option>
+                    <option>제주</option>
+                </select>
+            </div>
+
+            <div class="buttons">
+                <button type="submit">회원가입</button>
+                <button type="reset">취소</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            const id = document.getElementById('id').value;
+            const password = document.getElementById('password').value;
+            const passwordConfirm = document.getElementById('passwordConfirm').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            const idRegex = /^[a-zA-Z][a-zA-z0-9]{3,11}$/;
+            const pwRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,15}$/;
+            const nameRegex = /^[가-힣]{2,}$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if(!idRegex.test(id)) {
+                alert("첫 글자는 반드시 영문자, 영문자/숫자 포함 총 4~12자로 입력하세요.");
+                return false;
+            }
+
+            if(!pwRegex.test(password)) {
+                alert("영문자, 숫자, 특수문자로 총 8~15자로 입력하세요.");
+                return false;
+            }
+
+            if(password !== passwordConfirm) {
+                alert("비밀번호가 일치하지 않습니다.");
+                return false;
+            }
+
+            if(!nameRegex.test(name)) {
+                alert("이름은 한글로 2글자 이상 입력하세요.");
+                return false;
+            }
+
+            if(!emailRegex.test(email)) {
+                alert("올바른 이메일 형식이 아닙니다.");
+                return false;
+            }
+
+            alert("회원가입이 완료되었습니다.");
+            return true;
+        }
+    </script>
+</body>
+</html>

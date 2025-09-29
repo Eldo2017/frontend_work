@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 메소드 및 숫자</title>
+    <style>
+        .area {
+            width: 500px;
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>문자열 메소드 및 숫자</h1>
+
+    <h3>* 문자열 메소드</h3>
+
+    <button onclick="stringtest();">문자열 처리 메소드</button>
+
+    <div class="area" id="area1"></div>
+
+    <script>
+        function stringtest() {
+            const area1 = document.querySelector('#area1');
+            const str1 = 'I am Gangster!';
+
+            area1.innerHTML += `str1 : ${str1}<br>`;
+            area1.innerHTML += `toUpperCase() : ${str1.toUpperCase()}<br>`;
+            area1.innerHTML += `toLowerCase() : ${str1.toLowerCase()}<br>`;
+
+            area1.innerHTML += `문자열 길이 : ${str1.length}<br>`;
+            area1.innerHTML += '---------------------------------<br>';
+
+            // charAt(index) : 인덱스 번호에 해당하는 문자를 반환한다
+            area1.innerHTML += 'charAt(index) : 인덱스 번호에 해당하는 문자를 반환한다<br>';
+            for(let i=0;i<str1.length;i++){
+                // area1.innerHTML += `${i}번 인덱스 : ${str1[i]}<br>`;
+                area1.innerHTML += `${i}번 인덱스 : ${str1.charAt(i)}<br>`;
+            }
+            area1.innerHTML += '---------------------------------<br>';
+
+            area1.innerHTML += `앞에서부터 첫 'g'의 위치 : ${str1.indexOf('g')}<br>`;
+            area1.innerHTML += `뒤에서부터 첫 't'의 위치 : ${str1.lastIndexOf('t')}<br>`;
+            // 없는 문자면 -1
+            area1.innerHTML += `앞에서부터 첫 'x'의 위치 : ${str1.indexOf('x')}<br>`;
+            area1.innerHTML += '---------------------------------<br>';
+
+            area1.innerHTML += `substring(시작 인덱스) : ${str1.substring(4)}<br>`;
+            area1.innerHTML += `substring(시작 인덱스, 끝 인덱스) : ${str1.substring(4,7)}<br>`;
+            
+            const str2 = '오렌지,바나나,포도,멜론';
+            const fruits = str2.split(',');
+
+            area1.innerHTML += `fruits : ${fruits}<br>`;
+            area1.innerHTML += `fruits의 자료형 : ${typeof fruits}<br>`;
+            
+            console.log(fruits);
+            area1.innerHTML += `str2의 자료형 : ${typeof str2}<br>`;
+            // 0번 인덱스 : I
+            // 1번 인덱스 : 공백
+            // 2번 인덱스 : a
+        }
+    </script>
+
+    <br>
+
+    <h3>* 문자열 html 메소드</h3>
+    <button onclick="stringhtmltest();">문자열 html 메소드</button>
+    <div class="area" id="area2"></div>
+
+    <script>
+        function stringhtmltest() {
+            const area2 = document.getElementById('area2');
+            const str3='Kamen Rider Bake';
+
+            // str : Kamen Rider Bake
+
+            area2.innerHTML+=`str3 : ${str3}<br>`;
+            area2.innerHTML+=`bold() : ${str3.bold()}<br>`;
+            area2.innerHTML+=`italics() : ${str3.italics()}<br>`;
+            area2.innerHTML+=`bold and italics() : ${str3.bold().italics()}<br>`;
+            area2.innerHTML+=`small() : ${str3.small()}<br>`;
+            area2.innerHTML+=`sub() : ${str3.sub()}<br>`;
+            area2.innerHTML+=`sup() : ${str3.sup()}<br>`;
+            area2.innerHTML+=`link() : ${str3.link('https://namu.wiki/w/%EA%B0%80%EB%A9%B4%EB%9D%BC%EC%9D%B4%EB%8D%94%20%EB%B2%A0%EC%9D%B4%ED%81%AC')}<br>`;
+        }
+    </script>
+
+    <hr>
+
+    <h3>* 숫자 관련(수학) 메소드</h3>
+
+    <button onclick="mathtest();">수학 메소드</button>
+
+    <div class="area" id="area3"></div>
+
+    <script>
+        function mathtest() {
+            const area3 = document.getElementById('area3');
+
+            // 자바스크립트에서 math 내장 객체 제공
+            area3.innerHTML += `절대값 : ${Math.abs(-7)}<br>`;
+            area3.innerHTML += `랜덥값 : ${Math.random()}<br>`;
+            area3.innerHTML += `반올림 : ${Math.round(16.92)}<br>`;
+
+            // 위치 조절 불가 (전부 정수로 변한다)
+            area3.innerHTML += `반올림 : ${Math.round(16.92,1)}<br>`;
+
+            area3.innerHTML += `버림 : ${Math.floor(16.92)}<br>`;
+            area3.innerHTML += `올림 : ${Math.ceil(16.92)}<br>`;
+        }
+    </script>
+
+    <h3>* 문자열 / 숫자 간 산술 연산 및 형 변환</h3>
+
+    <button onclick="arithmetic();">산술 연산</button>
+
+    <div class="area" id="area4"></div>
+
+    <script>
+        function arithmetic() {
+            const area4 = document.getElementById('area4');
+            const t1 = 7 + 7;
+            const t2 = 7 + '3';
+            const t3 = '1' + 7;
+            const t4 = 6 + 9 + '2';
+            const t5 = '10' + 9 + 7;
+            const t6 = '1' + (8 + 9);
+
+            area4.innerHTML += `test1 : ${t1}<br>`;
+            area4.innerHTML += `test2 : ${t2}<br>`;
+            area4.innerHTML += `test3 : ${t3}<br>`;
+            area4.innerHTML += `test4 : ${t4}<br>`;
+            area4.innerHTML += `test5 : ${t5}<br>`;
+            area4.innerHTML += `test6 : ${t6}<hr>`;
+
+            // 덧셈 외에도 산술 연산이 가능하다
+            const t7 = '10' - 7;
+            const t8 = '17' * 3;
+            const t9 = '22' / 11;
+            const t10 = '32' % 8;
+
+            area4.innerHTML += `test7 : ${t7}<br>`;
+            area4.innerHTML += `test8 : ${t8}<br>`;
+            area4.innerHTML += `test9 : ${t9}<br>`;
+            area4.innerHTML += `test10 : ${t10}<hr>`;
+
+            // 강제 형변환
+            // 1. 문자 -> 숫자
+            const t11 = 8 + '9';
+            area4.innerHTML += `test11 : ${t11}<br>`;
+
+            /*
+                1. Number(문자열)
+                2. ParseInt(문자열)
+                3. parseFloat(문자열)
+
+            */
+           const t12 = 8 + Number('9');
+           const t13 = 8 + parseInt('9');
+           const t14 = 16 + parseFloat('1.16');
+
+           area4.innerHTML += `test12 : ${t12}<br>`;
+           area4.innerHTML += `test13 : ${t13}<br>`;
+           area4.innerHTML += `test14 : ${t14}<hr>`;
+        }
+    </script>
+
+    <hr>
+
+    정수 1 : <input type="number" id="n1"><br>
+    정수 2 : <input type="number" id="n2"><br>
+    <div id="result"></div>
+    
+    <button onclick="plus();">덧셈</button>
+
+    <br>
+    <script>
+        function plus() {
+            const n1 = document.getElementById('n1').value;
+            const n2 = document.getElementById('n2').value;
+
+            const sum = Number(n1) + Number(n2);
+
+            document.getElementById('result').innerHTML+=`결과 : ${sum}`;
+            console.log(n1);
+            console.log(n2);
+        }
+    </script>
+
+    <br><hr>
+
+    <h3>* 실습 문제</h3>
+    <p>사용자로부터 prompt로 입력받은 문자열 중 알파벳(소문자)의 숫자를 세어라</p>
+
+    <!-- ex) Kamen Rider Dorado : 소문자 (a,m,e,n,i,d,e,r,o,r,a,d,o) => 13개 -->
+    문자열 : <input type="text" id="str">
+    <button onclick="searching();">실습문제 정답</button>
+
+    <div id="ex"></div>
+
+    <script>
+        function searching() {
+            const str4 = document.getElementById('str').value;
+            const ex = document.getElementById('ex');
+            let count = 0;
+            
+            for(var i=0;i<str4.length;i++){
+                if(str4.charAt(i)>='a' && str4.charAt(i)<='z') count++;
+                
+                ex.innerHTML += `${i}번째 인덱스 : ${str4.charAt(i)}<br>`;
+            }
+            ex.innerHTML += `총 소문자 개수 : ${count}<br>`;
+        }
+    </script>
+</body>
+</html>

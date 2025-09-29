@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox 예제</title>
+</head>
+<body>
+    <fieldset>
+    <legend>읽고 싶은 장르</legend>
+
+    <!-- Select All -->
+    <input type="checkbox" id="selectAll">
+    <label for="selectAll"><b>Select All</b></label>
+    <br><br>
+
+    <!-- 개별 체크박스 -->
+    <input type="checkbox" class="genre" id="novel"><label for="novel">소설</label>
+    <input type="checkbox" class="genre" id="essay"><label for="essay">에세이</label>
+    <input type="checkbox" class="genre" id="humanities"><label for="humanities">인문</label>
+    <input type="checkbox" class="genre" id="cook"><label for="cook">요리</label>
+    <input type="checkbox" class="genre" id="health"><label for="health">건강</label>
+    <input type="checkbox" class="genre" id="economy"><label for="economy">경제</label>
+    <input type="checkbox" class="genre" id="history"><label for="history">역사</label>
+    <input type="checkbox" class="genre" id="computer"><label for="computer">컴퓨터</label>
+    <input type="checkbox" class="genre" id="science"><label for="science">과학</label>
+    <input type="checkbox" class="genre" id="travel"><label for="travel">여행</label>
+    </fieldset>
+
+    <script>
+        const selectAll = document.getElementById("selectAll");
+        const checkboxes = document.querySelectorAll(".genre");
+
+        // Select All 클릭 시 전체 선택/해제
+        selectAll.addEventListener("change", () => {
+          checkboxes.forEach(cb => cb.checked = selectAll.checked);
+        });
+
+        // 개별 체크박스 중 하나라도 해제되면 Select All 해제
+        checkboxes.forEach(cb => {
+        cb.addEventListener("change", () => {
+            selectAll.checked = [...checkboxes].every(box => box.checked);
+        });
+        });
+    </script>
+</body>
+</html>
