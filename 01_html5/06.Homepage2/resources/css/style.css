@@ -48,7 +48,7 @@ nav {
 }
 
 .nav >li > a:hover {
-    background-color: #e0e0e0;
+    background-color: rgb(180, 125, 232);
 }
 
 /* 서브 메뉴 */
@@ -74,9 +74,8 @@ nav {
     white-space: nowrap;
 }
 
-/* 서브메뉴 등장 효과 */
-.nav > li:hover .submenu {
-    display: block;
+.submenu > li > a:hover {
+    background-color: rgb(180, 125, 232);
 }
 
 /* 이미지 슬라이드 */

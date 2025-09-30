@@ -114,6 +114,16 @@
                 $imgs.eq(current).fadeIn(1000);
             }, 3000);
         });
+
+        $(() => {
+            $('.nav>li').mouseover(function() {
+                $('.submenu').stop().slideDown();
+            });
+
+            $('.nav>li').mouseout(function() {
+                $('.submenu').stop().slideUp();
+            });
+        });
     </script>
 </body>
 </html>
